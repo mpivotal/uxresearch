@@ -1,0 +1,15 @@
+.row
+  .panel
+    .panel-body
+      .txt-c
+        %h1.title
+          = @headline
+        %h2.type-neutral-4
+          = @subhead
+%hr.pvxl
+.row
+  .col-sm-16.col-sm-push-4.col-md-16.col-md-push-4
+    %p
+      = "<strong>Participate in UX Research</strong> and shape the future of how the world builds software.".html_safe
+      
+    = render 'form', participant: @participant

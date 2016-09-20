@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %title App
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body{ :class => "#{controller_name} #{action_name}" }
+    .container
+      .row
+        .txt-c.mtxl
+          = image_tag 'pivotal.png', width: 218
+      = yield
