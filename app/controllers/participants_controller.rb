@@ -5,7 +5,7 @@ class ParticipantsController < ApplicationController
   # GET /participants
   # GET /participants.json
   def index
-    redirect_to 'participants#new'
+    redirect_to '/participants/new'
   end
 
   # GET /participants/1
@@ -73,7 +73,7 @@ class ParticipantsController < ApplicationController
     def set_message
       messages = Participant::MESSAGES
       if params[:message_id] then @message = messages[ params[:message_id].to_i] end
-      if !params[:message_id] then @message = messages.sample end
+      if !params[:message_id] then @message = messages.first end
       @headline = @message[0]
       @subhead = @message[1]
     end
