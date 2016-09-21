@@ -74,8 +74,10 @@ class ParticipantsController < ApplicationController
       messages = Participant::MESSAGES
       if params[:message_id] then @message = messages[ params[:message_id].to_i] end
       if !params[:message_id] then @message = messages.first end
-      @headline = @message[0]
-      @subhead = @message[1]
+      unless @message.blank?
+        @headline = @message[0]
+        @subhead = @message[1]
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
