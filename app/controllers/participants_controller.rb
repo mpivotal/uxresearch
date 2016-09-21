@@ -73,7 +73,7 @@ class ParticipantsController < ApplicationController
     def set_message
       messages = Participant::MESSAGES
       if params[:message_id] then @message = messages[ params[:message_id].to_i] end
-      if !params[:message_id] then @message = messages.first end
+      if !params[:message_id] then @message = messages.last end
       unless @message.blank?
         @headline = @message[0]
         @subhead = @message[1]
