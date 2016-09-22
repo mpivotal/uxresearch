@@ -11,7 +11,10 @@ namespace :participants do
         csv << attributes.map{ |attr| participant.send(attr) }
       end
     end
-    print csv_string
+    file = File.open("public/#{SecureRandom.hex}-participants.csv", "w")
+    print file.path
+    file.write(csv_string)
+    file.close
   end
 
 end
