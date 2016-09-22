@@ -11,10 +11,10 @@ namespace :participants do
         csv << attributes.map{ |attr| participant.send(attr) }
       end
     end
-    file = File.open("public/#{SecureRandom.hex}-participants.csv", "w")
-    print file.path
-    file.write(csv_string)
-    file.close
+    File.open("#{Rails.root}/public/export/participants.csv", "w") do |file|
+      puts file.path
+      file.write(csv_string)
+    end
   end
 
 end

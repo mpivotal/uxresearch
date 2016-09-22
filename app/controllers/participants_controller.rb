@@ -64,6 +64,12 @@ class ParticipantsController < ApplicationController
     # end
   end
 
+  def export
+    %x[rake participants:csv]
+    respond_to do |format|
+      format.html { redirect_to '/', notice: 'Export succeeded.' }
+    end
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_participant

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'confirmation/thankyou'
+  get 'participants/export'
 
   root "participants#new"
   resources :participants
