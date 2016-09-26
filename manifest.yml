@@ -3,3 +3,5 @@ applications:
   path: .
   memory: 128M
   instances: 1
+  services:
+    - uxresearch-db
